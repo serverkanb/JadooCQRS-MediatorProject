@@ -1,0 +1,45 @@
+﻿@using JadooProject.Features.CQRS.Results
+@using JadooProject.Features.CQRS.Results.DestinationResult
+﻿
+@model List<GetDestinationQueryResult>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container">
+    <h3>Tur Rotaları</h3>
+
+    <table class="table table-bordered">
+        @{
+            int count = 0;
+        }
+        <tr>
+            <th>#</th>
+            <th>Şehir</th>
+            <th>Tur Süresi</th>
+            <th>Fiyat</th>
+            <th>İşlemler</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <th>@count</th>
+                <td>@item.City</td>
+                <td>@item.Duration</td>
+                <td>@item.Price ₺</td>
+                <td>
+                    <a href="/Destination/DeleteDestination/@item.DestinationId" class="btn btn-danger">Sil</a>
+                    <a href="/Destination/UpdateDestination/@item.DestinationId" class="btn btn-info">Güncelle</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <br />
+    <a href="/Destination/CreateDestination" class="btn btn-primary">Yeni Rota Oluştur</a>
+
+</div>

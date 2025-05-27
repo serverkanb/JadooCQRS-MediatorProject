@@ -1,0 +1,25 @@
+﻿@using JadooProject.Features.Mediator.Commands.ServiceCommands
+@model CreateServiceCommand
+@{
+    ViewData["Title"] = "CreateService";
+}
+<h3>Yeni Hizmet Ekleme Sayfası</h3>
+
+<form method="post">
+ 
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Description</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+    <label>Icon</label>
+    <input type="text" asp-for="Icon" class="form-control" />
+    <br />
+   
+
+    <button class="btn btn-outline-primary">Kaydet</button>
+</form>
+
+
+
