@@ -1,0 +1,33 @@
+﻿@using JadooProject.Features.Mediator.Results.SubscribeResults
+@model List<GetSubscribeQueryResult>
+@{
+    ViewData["Title"] = "Aboneler";
+}
+
+<div class="container mt-4">
+    <h2>Aboneler</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Email</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SubscribeId</td>
+                    <td>@item.Email</td>
+                    <td>
+                        <a href="/Subscribe/Update/@item.SubscribeId" class="btn btn-warning btn-sm">Güncelle</a>
+                        <a href="/Subscribe/Delete/@item.SubscribeId" class="btn btn-danger btn-sm" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/Subscribe/Create" class="btn btn-primary">Yeni Abone Ekle</a>
+</div>

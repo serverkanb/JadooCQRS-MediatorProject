@@ -14,18 +14,20 @@ namespace JadooProject.Features.CQRS.Handlers.FeatureHandlers
             _repository = repository;
         }
 
-        public GetFeatureQueryResult Handle()
+        public List<GetFeatureQueryResult> Handle()
         {
-            var value = _repository.GetList().FirstOrDefault(); // tek satır
+            var values = _repository.GetList();
 
-            return new GetFeatureQueryResult
+            return values.Select(x => new GetFeatureQueryResult
             {
-                Title = value.Title,
-                Description = value.Description,
-                ImageUrl = value.ImageUrl
-            };
+                FeatureId = x.FeatureId,
+                Title = x.Title,
+                Description = x.Description,
+                ImageUrl = x.ImageUrl
+            }).ToList();
         }
     }
+
 
 
 }

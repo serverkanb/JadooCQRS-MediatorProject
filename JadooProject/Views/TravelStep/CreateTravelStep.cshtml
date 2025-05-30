@@ -1,0 +1,24 @@
+﻿@using JadooProject.Features.CQRS.Commands.TravelStep
+@model CreateTravelStepCommand
+@{
+    ViewData["Title"] = "CreateTravelStep";
+}
+
+<div class="container">
+    <h3>Yeni Gezi Adımı Ekle</h3>
+
+    <form method="post">
+        <label>İkon</label>
+        <input type="text" asp-for="Icon" class="form-control" />
+        <br />
+        <label>Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <br />
+        <button class="btn btn-primary">Kaydet</button>
+    </form>
+</div>
+
+

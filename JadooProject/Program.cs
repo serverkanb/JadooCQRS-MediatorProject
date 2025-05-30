@@ -32,6 +32,12 @@ builder.Services.AddScoped<RemoveFeatureCommandHandler>();
 builder.Services.AddScoped<GetFeatureQueryHandler>();
 builder.Services.AddScoped<GetFeatureByIdQueryHandler>();
 
+builder.Services.AddScoped<CreateFeatureCommandHandler>();
+builder.Services.AddScoped<UpdateFeatureCommandHandler>();
+builder.Services.AddScoped<RemoveFeatureCommandHandler>();
+builder.Services.AddScoped<GetFeatureQueryHandler>();
+builder.Services.AddScoped<GetFeatureByIdQueryHandler>();
+
 builder.Services.AddDbContext<JadooContext>();
 
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));

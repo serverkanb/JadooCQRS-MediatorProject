@@ -1,0 +1,19 @@
+﻿@using JadooProject.Features.Mediator.Commands.SubscribeCommands
+@model UpdateSubscribeCommand
+
+@{
+    ViewData["Title"] = "Abone Güncelle";
+}
+
+<div class="container mt-4">
+    <h3>Abone Güncelle</h3>
+    <form method="post">
+        <input type="hidden" asp-for="SubscribeId" />
+        <div class="form-group">
+            <label>Email</label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+    </form>
+</div>

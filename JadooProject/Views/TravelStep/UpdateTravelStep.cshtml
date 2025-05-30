@@ -1,0 +1,25 @@
+﻿@using JadooProject.Features.CQRS.Commands.TravelStepsCommands
+@model UpdateTravelStepsCommand
+@{
+    ViewData["Title"] = "UpdateTravelStep";
+}
+
+<div class="container">
+    <h3>Gezi Adımı Güncelle</h3>
+
+    <form method="post">
+        <input type="hidden" asp-for="TravelStepId" />
+
+        <label>İkon</label>
+        <input type="text" asp-for="Icon" class="form-control" />
+        <br />
+        <label>Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </form>
+</div>
+

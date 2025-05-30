@@ -1,0 +1,28 @@
+﻿@using JadooProject.Features.Mediator.Commands.TesstimOnialCommands
+@model CreateTestimOnialCommand
+@{
+    ViewData["Title"] = "Yeni Testimonial Oluştur";
+}
+
+<div class="container mt-4">
+    <h3>Yeni Testimonial Ekle</h3>
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Ad Soyad</label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Lokasyon</label>
+            <input asp-for="Location" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Yorum</label>
+            <textarea asp-for="Comment" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Resim URL</label>
+            <input asp-for="ImageUrl" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+</div>

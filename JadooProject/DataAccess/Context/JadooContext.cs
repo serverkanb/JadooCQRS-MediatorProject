@@ -13,8 +13,10 @@ namespace JadooProject.DataAccess.Context
         public DbSet<Service> Services { get; set; }
 
         public DbSet<Destination> Destinations { get; set; }
-
         public DbSet<Feature> Features { get; set; }
         public DbSet<TravelStep> TravelSteps { get; set; }
+        public DbSet<Testimonial> TestimOnials { get; set; }
+        public DbSet<PartnerBrand> PartnerBrands { get; set; }
+        public DbSet<Subscribe> Subscribes { get; set; }
     }
 }

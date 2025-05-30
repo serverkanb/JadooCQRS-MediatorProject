@@ -10,17 +10,22 @@ namespace JadooProject.Controllers
     {
         private readonly GetTravelStepsQueryHandler _getTravelStepsQueryHandler;
         private readonly CreateTravelStepCommandHandler _createTravelStepCommandHandler;
-        private readonly UpdateTravelStepCommandHandler _updateTravelStepCommanHandler;
-        private readonly RemoveTravelStepCommandHandler _removeTravelStepCommanHandler;
+        private readonly UpdateTravelStepCommandHandler _updateTravelStepCommandHandler;
+        private readonly RemoveTravelStepCommandHandler _removeTravelStepCommandHandler;
         private readonly GetTravelStepByIdQueryHandler _getTravelStepByIdQueryHandler;
 
-        public TravelStepController(GetTravelStepsQueryHandler getTravelStepsQueryHandler, CreateTravelStepCommandHandler createTravelStepCommandHandler, UpdateTravelStepCommandHandler updateTravelStepCommandHandler, RemoveTravelStepCommandHandler removeTravelStepCommandHandler, GetTravelStepByIdQueryHandler getTravelStepCommandByIdQueryHandler)
+        public TravelStepController(
+            GetTravelStepsQueryHandler getTravelStepsQueryHandler,
+            CreateTravelStepCommandHandler createTravelStepCommandHandler,
+            UpdateTravelStepCommandHandler updateTravelStepCommandHandler,
+            RemoveTravelStepCommandHandler removeTravelStepCommandHandler,
+            GetTravelStepByIdQueryHandler getTravelStepByIdQueryHandler)
         {
             _getTravelStepsQueryHandler = getTravelStepsQueryHandler;
             _createTravelStepCommandHandler = createTravelStepCommandHandler;
-            _updateTravelStepCommanHandler = updateTravelStepCommandHandler;
-            _removeTravelStepCommanHandler = removeTravelStepCommandHandler;
-            _getTravelStepByIdQueryHandler = getTravelStepCommandByIdQueryHandler;
+            _updateTravelStepCommandHandler = updateTravelStepCommandHandler;
+            _removeTravelStepCommandHandler = removeTravelStepCommandHandler;
+            _getTravelStepByIdQueryHandler = getTravelStepByIdQueryHandler;
         }
 
         public IActionResult Index()
@@ -30,20 +35,20 @@ namespace JadooProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public IActionResult CreateTravelStep()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(CreateTravelStepCommand command)
+        public IActionResult CreateTravelStep(CreateTravelStepCommand command)
         {
             _createTravelStepCommandHandler.Handle(command);
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public IActionResult Update(int id)
+        public IActionResult UpdateTravelStep(int id)
         {
             var value = _getTravelStepByIdQueryHandler.Handle(new GetTravelStepByIdQuery(id));
 
@@ -59,15 +64,15 @@ namespace JadooProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(UpdateTravelStepsCommand command)
+        public IActionResult UpdateTravelStep(UpdateTravelStepsCommand command)
         {
-            _updateTravelStepCommanHandler.Handle(command);
+            _updateTravelStepCommandHandler.Handle(command);
             return RedirectToAction("Index");
         }
 
-        public IActionResult Delete(int id)
+        public IActionResult DeleteTravelStep(int id)
         {
-            _removeTravelStepCommanHandler.Handle(new RemoveTravelStepsCommand(id));
+            _removeTravelStepCommandHandler.Handle(new RemoveTravelStepsCommand(id));
             return RedirectToAction("Index");
         }
     }

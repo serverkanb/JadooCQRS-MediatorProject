@@ -26,7 +26,7 @@ namespace JadooProject.Features.Mediator.Handlers.ServiceHandlers
                                    Description = x.Description,
                                    Icon = x.Icon,
                                    ServiceId = x.ServiceId,
-                                   Title = x.Title,
+                                   Title = x.Title
                                }).ToList();
             return serviceList;
         }
