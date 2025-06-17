@@ -15,12 +15,14 @@ namespace JadooProject.Features.Mediator.Handlers.TestimOnialHandlers
 
         public async Task Handle(RemoveTestimOnialCommand request, CancellationToken cancellationToken)
         {
-            var entity = await _context.TestimOnials.FindAsync(request.Id);
-            if (entity != null)
+            var value = _context.TestimOnials.Find(request.Id);
+            if (value == null)
             {
-                _context.TestimOnials.Remove(entity);
-                await _context.SaveChangesAsync();
+                throw new Exception("Silinecek testimonial bulunamadı.");
             }
+            _context.TestimOnials.Remove(value);
+            await _context.SaveChangesAsync();
+
         }
     }
 }

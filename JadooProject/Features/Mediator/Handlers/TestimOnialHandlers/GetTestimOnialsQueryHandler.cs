@@ -23,6 +23,7 @@ namespace JadooProject.Features.Mediator.Handlers.TestimOnialHandlers
 
             var result = values.Select(x => new GetTestimOnialQueryResult
             {
+                TestimonialId = x.TestimonialId,    
                 Name = x.Name,
                 Comment = x.Comment,
                 ImageUrl = x.ImageUrl,

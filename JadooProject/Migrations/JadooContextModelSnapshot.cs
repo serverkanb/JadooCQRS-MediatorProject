@@ -33,8 +33,20 @@ namespace JadooProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Duration")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image3")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
@@ -74,6 +86,23 @@ namespace JadooProject.Migrations
                     b.ToTable("Features");
                 });
 
+            modelBuilder.Entity("JadooProject.DataAccess.Entities.PartnerBrand", b =>
+                {
+                    b.Property<int>("PartnerBrandId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PartnerBrandId"));
+
+                    b.Property<string>("LogoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PartnerBrandId");
+
+                    b.ToTable("PartnerBrands");
+                });
+
             modelBuilder.Entity("JadooProject.DataAccess.Entities.Service", b =>
                 {
                     b.Property<int>("ServiceId")
@@ -97,6 +126,23 @@ namespace JadooProject.Migrations
                     b.HasKey("ServiceId");
 
                     b.ToTable("Services");
+                });
+
+            modelBuilder.Entity("JadooProject.DataAccess.Entities.Subscribe", b =>
+                {
+                    b.Property<int>("SubscribeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SubscribeId"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SubscribeId");
+
+                    b.ToTable("Subscribes");
                 });
 
             modelBuilder.Entity("JadooProject.DataAccess.Entities.Testimonial", b =>

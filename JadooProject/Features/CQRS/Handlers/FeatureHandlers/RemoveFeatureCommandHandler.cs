@@ -15,8 +15,7 @@ namespace JadooProject.Features.CQRS.Handlers.FeatureHandlers
 
         public void Handle(RemoveFeatureCommand command)
         {
-            var entity = _repository.GetById(command.Id);
-                _repository.Delete(entity.FeatureId);
+            _repository.Delete(command.Id);
             
         }
     }

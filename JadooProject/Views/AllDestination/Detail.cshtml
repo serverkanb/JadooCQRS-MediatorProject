@@ -1,0 +1,76 @@
+﻿@model GetDestinationByIdQueryResult
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+<br />
+<br />
+<br />
+
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">@Model.City</h1>
+            <p class="text-secondary">Fiyat: @Model.Price ₺ | Süre: @Model.Duration</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <img src="@Model.ImageUrl" class="img-fluid rounded mb-4" alt="@Model.City">
+                @if (string.IsNullOrEmpty(Model.Description))
+                {
+                    
+                <p class="fs-5">
+                    Bu tur hakkında detaylı bilgi yakında eklenecektir.
+                   
+                </p>
+                }
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow p-3">
+                    <h4 class="fw-bold">Tur Bilgileri</h4>
+                    <ul class="list-unstyled mt-3">
+                        <li><strong>Fiyat:</strong> @Model.Price ₺</li>
+                        <li><strong>Süre:</strong> @Model.Duration</li>
+                        <li><strong>Lokasyon:</strong> @Model.City</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary mt-3 w-100">Şimdi Rezervasyon Yap</a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <h3 class="fw-bold mb-3">Tur Açıklaması</h3>
+            <p class="fs-5">
+                @Model.Description
+            </p>
+        </div>
+        <div class="mt-5">
+            <h3 class="fw-bold mb-3">Galeri</h3>
+            <div class="row">
+                @if (!string.IsNullOrEmpty(Model.Image1))
+                {
+                    <div class="col-md-4 mb-3">
+                        <img src="@Model.Image1" class="img-fluid rounded" alt="galeri1" />
+                    </div>
+                }
+                @if (!string.IsNullOrEmpty(Model.Image2))
+                {
+                    <div class="col-md-4 mb-3">
+                        <img src="@Model.Image2" class="img-fluid rounded" alt="galeri2" />
+                    </div>
+                }
+                @if (!string.IsNullOrEmpty(Model.Image3))
+                {
+                    <div class="col-md-4 mb-3">
+                        <img src="@Model.Image3" class="img-fluid rounded" alt="galeri3" />
+                    </div>
+                }
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+

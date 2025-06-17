@@ -4,6 +4,7 @@ using JadooProject.Features.CQRS.Handlers.DestinationHandlers;
 using JadooProject.Features.CQRS.Queries;
 using JadooProject.Features.CQRS.Queries.DestinationQueries;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace JadooProject.Controllers
 {
@@ -71,5 +72,9 @@ namespace JadooProject.Controllers
             _removeDestinationCommandHandler.Handle(new RemoveDestinationCommand(id));
             return RedirectToAction("Index");
         }
+
+       
+
+
     }
 }

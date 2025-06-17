@@ -2,6 +2,7 @@
 using JadooProject.DataAccess.Entities;
 using JadooProject.Features.CQRS.Queries.DestinationQueries;
 using JadooProject.Features.CQRS.Results.DestinationResult;
+using System.Drawing;
 
 namespace JadooProject.Features.CQRS.Handlers.DestinationHandlers
 {
@@ -25,6 +26,11 @@ namespace JadooProject.Features.CQRS.Handlers.DestinationHandlers
             result.ImageUrl = value.ImageUrl;
             result.City = value.City;
             result.Price = value.Price;
+            result.Image1 = value.Image1;
+            result.Image2 = value.Image2;
+            result.Image3 = value.Image3;
+            result.Description = value.Description;
+              
             return result;
         }
         
