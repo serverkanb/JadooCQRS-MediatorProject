@@ -1,4 +1,4 @@
-# Jadoo Seyahat Projesi
+# Jadoo Tatil-Seyahat Projesi
 
 **Jadoo Seyahat Projesi**, ASP.NET Core MVC ile geliştirilmiş, **CQRS (Command Query Responsibility Segregation)** ve **MediatR** desenleriyle yapılandırılmış 
 bir seyahat ve tatil acentesi web uygulamasıdır. Kullanıcılar tur ve destinasyonları inceleyebilir, detay sayfalarını görüntüleyebilir ve bültenlere abone olabilirler. 
